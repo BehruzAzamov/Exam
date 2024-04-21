@@ -1,0 +1,28 @@
+{
+  "recepts": [
+    {
+      "name": "Osh",
+      "time": "60",
+      "body": "Uzbek food",
+      "ingredients": ["suv", "go'sht"],
+      "image": "https://avatars.mds.yandex.net/i?id=fd1d565b1469fdfecb3683b762c9819f6f9bdaa4-8982254-images-thumbs&n=13",
+      "id": 1
+    },
+    {
+      "name": "Pizza",
+      "time": "45",
+      "body": "Italian food",
+      "ingredients": ["masorella", "saus"],
+      "image": "https://avatars.mds.yandex.net/i?id=8baaac4ecadd44490a87872bc6553dfcb9ee1985-12423213-images-thumbs&n=13",
+      "id": 2
+    },
+    {
+      "name": "Sushi",
+      "time": "30",
+      "body": "Japanes food",
+      "ingredients": ["fish"],
+      "image": "https://avatars.mds.yandex.net/i?id=36fe0141b85cbdbfae0a6e30d41de8b211078f70-10877381-images-thumbs&n=13",
+      "id": 3
+    }
+  ]
+}
