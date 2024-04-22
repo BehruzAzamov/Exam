@@ -26,8 +26,6 @@ const Signup = () => {
     <div className="min-h-screen grid place-items-center">
       <div className="max-w-96 w-full">
         <Form method="POST">
-          <FormInput type="text" label="User name:" name="displayName" />
-          <FormInput type="url" label="Photo URL:" name="photoURL" />
           <FormInput type="email" label="Email:" name="Email" />
           <FormInput type="password" label="Password:" name="password" />
           <div>

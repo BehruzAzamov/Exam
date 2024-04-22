@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Create from "./pages/Create";
-import SingleRecept from "./components/SingleRecept";
+import SingleRecept from "./pages/SingleRecept";
 import ProtectedRotes from "./components/ProtectedRotes";
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "./context/useGlobalContext";

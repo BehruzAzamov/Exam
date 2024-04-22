@@ -1,4 +1,4 @@
-import ReceptsList from "../components/ReceptsList";
+import ReceptsList from "../pages/ReceptsList";
 import { useFetch } from "../hooks/useFetch";
 const Home = () => {
   const {
