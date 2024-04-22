@@ -10,7 +10,7 @@ export const action = async ({ request }) => {
   let password = formData.get("password");
   let url = formData.get("photoURL");
 
-  return { username, password, email, url };
+  return { username, password, email };
 };
 const Signup = () => {
   let userSignup = useActionData();
