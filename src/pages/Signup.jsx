@@ -7,10 +7,10 @@ export const action = async ({ request }) => {
   let formData = await request.formData();
   let username = formData.get("Name");
   let email = formData.get("Email");
-  let password = formData.get("password");
-  let url = formData.get("photoURL");
+  let password = formData.get("Password");
+  let url = formData.get("PhotoURL");
 
-  return { username, password, email };
+  return { username, password, email,url };
 };
 const Signup = () => {
   let userSignup = useActionData();
@@ -19,7 +19,7 @@ const Signup = () => {
     useSignup();
   useEffect(() => {
     if (userSignup) {
-      signupWithPasswordAndEmail(userSignup.email, userSignup.password);
+      signupWithPasswordAndEmail(userSignup.username,userSignup.email, userSignup.password,userSignup.url);
     }
   }, [userSignup]);
   return (
@@ -27,8 +27,9 @@ const Signup = () => {
       <div className="max-w-96 w-full">
         <Form method="POST">
           <FormInput type="text" label="Name" name="Name"/>
+          <FormInput type="url" label="Image" name="PhotoURL" />
           <FormInput type="email" label="Email" name="Email" />
-          <FormInput type="password" label="Password" name="password" />
+          <FormInput type="password" label="Password" name="Password" />
           <div>
             <button
               className="btn btn-secondary w-full mb-3 text-xl"
@@ -44,7 +45,7 @@ const Signup = () => {
               <span className="text-2xl">Google</span>
             </button>
             <p className="text-center">
-              Do you have already an account?{" "}
+              Do you have already an account?
               <Link className="link text-blue-500" to="/signin">
                 Login
               </Link>

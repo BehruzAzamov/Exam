@@ -15,26 +15,26 @@ function LocalStorageTheme() {
 
 const Navbar = () => {
   const { user } = useContext(GlobalContext);
+  console.log(user);
   const [theme, setTheme] = useState(LocalStorageTheme());
 
   function handleClick() {
     const newTheme = theme === themes.winter ? themes.dracula : themes.winter;
     setTheme(newTheme);
-    toast.success("You changed mode");
+    toast.success("Changed theme");
   }
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("mode", theme);
   }, [theme]);
-  const data = useContext(GlobalContext);
-  console.log(data);
+
   return (
     <div className="bg-base-300">
       <div className="navbar align-element mb-10">
         <div className="navbar-start">
-          <Link className=" btn btn-primary hidden lg:flex" to="/">
-            Kitchen app
+          <Link className="btn btn-primary hidden lg:flex" to="/">
+            My Kitchen
           </Link>
           <Link className="btn btn-primary flex lg:hidden">MK</Link>
         </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img alt={`${user.displayName} image`} src={user.photoURL} />
+                <img alt={user.displayName} src={user.photoURL} />
               </div>
             </div>
             <ul
@@ -59,7 +59,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/create">Create a recept</Link>
+                <Link to="/create">Create recept</Link>
               </li>
               <li>
                 <button onClick={handleClick}>Change theme</button>
