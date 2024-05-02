@@ -56,10 +56,13 @@ const Navbar = () => {
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/create">Create book</Link>
               </li>
               <li>
-                <Link to="/create">Create recept</Link>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
                 <button onClick={handleClick}>Change theme</button>

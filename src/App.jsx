@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Create from "./pages/Create";
+import About from "./pages/About";
 import SingleRecept from "./pages/SingleRecept";
 import ProtectedRotes from "./components/ProtectedRotes";
 import { useContext, useEffect } from "react";
@@ -16,6 +17,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/firebaseConfig";
 import { action as signupAction } from "./pages/Signup";
 import { action as signinAction } from "./pages/Signin";
+import Contact from "./pages/Contact";
 function App() {
   const { user, dispatch, authChange } = useContext(GlobalContext);
   const routes = createBrowserRouter([
@@ -36,8 +38,16 @@ function App() {
           element: <Create />,
         },
         {
+          path: "/about",
+          element: <About />,
+        },
+        {
           path: "/singleRecept/:id",
           element: <SingleRecept />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
         },
       ],
     },

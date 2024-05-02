@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import {recepts} from "../../data/data.json"
+import {books} from "../../data/data.json"
+
 function Create() {
-  const { data, postData } = useFetch("recepts", "POST");
+  const { data, postData } = useFetch("books", "POST");
   const navigate = useNavigate();
   const [ingredient, setIngredient] = useState("");
   const [ingredients, setIngredients] = useState([]);
@@ -61,7 +62,7 @@ function Create() {
       >
         <label className="form-control w-full max-w-xs">
           <div className="label">
-            <span className="label-text">Name</span>
+            <span className="label-text">Title</span>
           </div>
           <input
             type="text"
@@ -73,7 +74,7 @@ function Create() {
         </label>
         <label className="form-control w-full max-w-xs">
           <div className="label">
-            <span className="label-text">Ingredients:</span>
+            <span className="label-text">Authors:</span>
           </div>
           <div className="flex gap-2">
             <input
@@ -91,7 +92,7 @@ function Create() {
           </div>
           <div>
             <p>
-              Ingredients:{" "}
+              Authors:
               {ingredients.map((ing, index) => {
                 if (index === ingredients.length - 1) {
                   return <span key={index}>{ing}</span>;
@@ -105,7 +106,7 @@ function Create() {
 
         <label className="form-control w-full max-w-xs">
           <div className="label">
-            <span className="label-text">Cooking Time</span>
+            <span className="label-text">Year</span>
           </div>
           <input
             type="number"
@@ -129,11 +130,11 @@ function Create() {
         </label>
         <label className="form-control w-full max-w-xs">
           <div className="label">
-            <span className="label-text">Body</span>
+            <span className="label-text">Description</span>
           </div>
           <textarea
             className="textarea textarea-bordered h-24"
-            placeholder="Bio"
+            placeholder="Desciption"
             value={body}
             onChange={(e) => setBody(e.target.value)}
           ></textarea>

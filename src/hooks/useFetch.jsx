@@ -14,11 +14,12 @@ export function useFetch(url, method = "GET") {
       body: JSON.stringify(newRecept),
     });
   };
+
   useEffect(() => {
     const fetchData = async (params) => {
       setIsPending(true);
       try {
-        const req = await fetch(url, params);
+        const req = await fetch("http://localhost:3000/books", params); // Updated URL
         if (!req.ok) {
           throw new Error("Where is Messi?");
         }
@@ -31,10 +32,11 @@ export function useFetch(url, method = "GET") {
         console.log(err.message);
       }
     };
-    if (params && method == "POST") {
+
+    if (params && method === "POST") {
       fetchData(params);
     }
-    if (method == "GET") {
+    if (method === "GET") {
       fetchData();
     }
   }, [url, method, params]);
